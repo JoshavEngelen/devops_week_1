@@ -1,0 +1,1 @@
+![example workflow](https://github.com/JoshavEngelen/devops_week_1/actions/workflows/CI-API.yml/badge.svg)
