@@ -36,9 +36,15 @@ jobs:
         run: npm ci
 
       - name: Run Tests (push)
+        if: github.event_name == 'push'
         run: npm test -- --coverage
 
+      - name: Run Linting (push)
+        if: github.event_name == 'push'
+        run: npm run lint
+
       - name: Run Tests + Coverage Report (PR)
+        if: github.event_name == 'pull_request'
         uses: ArtiomTr/jest-coverage-report-action@v2.3.1
         with:
           working-directory: ./routes
