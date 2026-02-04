@@ -6,7 +6,6 @@ const { db } = require("../services/database");
 /* GET users listing. */
 router.get('/', async function(req, res) {
   let users = await db.collection('users').find().toArray();
-  console.log(db.databaseName);
   console.log(users);
   res.json(users);
 });
