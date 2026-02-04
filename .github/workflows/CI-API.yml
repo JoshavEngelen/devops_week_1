@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run Tests (push)
+        run: npm test -- --coverage
+
       - name: Run Tests + Coverage Report (PR)
         uses: ArtiomTr/jest-coverage-report-action@v2.3.1
         with:
